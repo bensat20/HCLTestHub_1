@@ -31,10 +31,10 @@ stages:
               installationPath: $(Agent.ToolsDirectory)/dotnet
  
           # 3. Execute HCL OneTest Suite with the updated extension
-          - task: HCL-DevOps-Test-Workbench@1
+          - task: HCL DevOps Test Workbench@1
             displayName: 'Run HCL OneTest Suite'
             inputs:
-              serverUrl: '$(hclOneTestServerUrl)'  # URL for HCL OneTest Server
+              serverUrl: '$(OneTestHub)'  # URL for HCL OneTest Server
               testSuiteId: '$(testSuiteId)'        # The ID of the test suite
               projectArea: '$(projectArea)'        # Name of the project area
               credentialsType: 'basic'
