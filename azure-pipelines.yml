@@ -31,7 +31,7 @@ stages:
               installationPath: $(Agent.ToolsDirectory)/dotnet
  
           # 3. Execute HCL OneTest Suite using HCL DevOps Test Workbench extension
-          - task: HCLDevOpsTestWorkbench@1
+          - task: HCLTechnologies.build-release-task-hcl.onetestui.HCLOneTestUITask@2
             displayName: 'Run HCL OneTest Suite'
             inputs:
               serverUrl: '$(hclOneTestServerUrl)'  # URL for HCL OneTest Server
@@ -45,7 +45,7 @@ stages:
               publishResults: true                 # To publish test results in Azure
 
           # 4. Run WebUI Test after the integration
-          - task: HCLDevOpsTestWorkbench@1
+          - task: HCLTechnologies.build-release-task-hcl.onetestui.HCLOneTestUITask@2
             displayName: 'Run HCL WebUI Tests'
             inputs:
               serverUrl: '$(hclOneTestServerUrl)'  # URL for HCL OneTest Server
